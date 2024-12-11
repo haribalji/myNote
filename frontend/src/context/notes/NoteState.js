@@ -1,19 +1,7 @@
 import React, { useState } from "react";
 import NoteContext from "./notecontext";
 const NoteState = (props) => {
-  //     const s1={
-  //         "name":"nvp",
-  //         "class":"5p"
-  //     }
-  //     const [state, setstate] = useState(s1);
-  //    const  update=()=>{
-  //         setTimeout(() => {
-  //             setstate({
-  //                     "name":"nvp nanguneri ",
-  //                    "class":"5p"
-  //             })
-  //         }, 3000);
-  //     }
+
 
   const host = "https://mynote-zmil.onrender.com";
   const startnotes = [];
@@ -32,7 +20,7 @@ const NoteState = (props) => {
       // body: JSON.stringify({title, description, tag}),
     });
     const json = await response.json();
-console.log(json);
+// console.log(json);
 setNote(json);
   };
 
@@ -52,7 +40,6 @@ setNote(json);
     });
     const note =await  response.json();
 
-      console.log(note)
 
     // console.log("adding the nwe node");
  
@@ -64,7 +51,7 @@ setNote(json);
   // function for deleting the node
 
   const deletenote = async(id) => {
-    console.log("the   deleting started" + id);
+    // console.log("the   deleting started" + id);
     const response = await fetch(`${host}/api/notes/delete/${id}`, {
       method: "DELETE",
       headers: {
@@ -72,7 +59,7 @@ setNote(json);
         "auth-token":localStorage.getItem('token')      },
     });
     const json = response.json();
-    console.log(json);
+    // console.log(json);
 
     const newnotes = notes.filter((note) => {
       return note._id !== id;

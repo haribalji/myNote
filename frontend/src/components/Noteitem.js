@@ -1,5 +1,5 @@
 // import React from 'react'
-import React,{useContext, useEffect, useState} from 'react'
+import React,{useContext} from 'react'
 import noteContext from '../context/notes/notecontext';
 
 

@@ -13,7 +13,6 @@ const { body, validationResult } = require('express-validator');
 const fetchuser = require('../middleware/fetchdata');
 
 // creating a jwt secert key for creating token
-// const JWT_SECERT="haribalajinvp";
 const JWT_SECERT = process.env.JWT_SECERT;
 
 // rout-1 create user not login requried creating newuser 
@@ -24,12 +23,7 @@ body('email',"Enter a valid email").isEmail(),
 body('password',"password must be atleast  6 characters").isLength({min:6}),
 
 ],async (req,res)=>{
-         //  obj={
-         //     a:"the",
-         //     number:34,
-
-         //  }
-
+        
 // checking any erros are there if there exit then return errors ,like format checking , empty or not  
 const result = validationResult(req);
 let success=false;

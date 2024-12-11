@@ -1,5 +1,4 @@
 var jwt = require('jsonwebtoken');
-// const JWT_SECERT="haribalajinvp";
 
 const dotenv = require('dotenv');
 

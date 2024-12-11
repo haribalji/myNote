@@ -7,7 +7,6 @@ const Signup = (props) => {
     const [credentials, setcredentials] = useState({name:"" ,email:"",password:"" , cpassword:""});
     const handlesubmit=async(e)=>{
       e.preventDefault();
-      console.log(e.target.email.value)//there the "email" it is the name of the  field
       const response = await fetch(`https://mynote-zmil.onrender.com/api/auth/createuser`, {
         method: "POST",
         headers: {
@@ -16,12 +15,10 @@ const Signup = (props) => {
         body: JSON.stringify({name:credentials.name,email:credentials.email,password:credentials.password}),
       });
       const json =await response.json();
-   console.log(json);
    if(json.success){
 // when the login is suceess then store the token in local storage
 // localStorage.setItem("token",json.authutoken);
 localStorage.setItem("token",json.authutoken);
-console.log(localStorage.getItem("token"))
 navigate("/home");
     props.showAlert(" Account Created Successfully  ","success")
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTdkNGNhMjk5MmMxMjQ3YmE2NGI3YSIsImlhdCI6MTczMzgwOTM1NH0.ik4E5WkAaXukHj-72sJejYTdkabJ7ibOBDui2TGo0nA
@@ -39,7 +36,7 @@ navigate("/home");
     }
   return (
     <div className='container mt-5'>
-      <h2> Mynotebook:  Join With your Personal Partner</h2>
+      <h2> MyNote:  Join With your Personal Partner</h2>
 
       <form onSubmit={handlesubmit}>
       <div className="mb-3 mt-3">

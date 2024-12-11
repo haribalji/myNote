@@ -2,9 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from 'react'
 import noteContext from '../context/notes/notecontext';
 import Noteitem from './Noteitem';
 import Addnote from './Addnote';
-// import bootstrap from "bootstrap"
-// window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
-import { Modal } from 'bootstrap'
+
 import { useNavigate } from 'react-router-dom';
 
 const Notes = (props) => {
@@ -18,9 +16,7 @@ const Notes = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(localStorage.getItem("token"));
     if(localStorage.getItem("token")!=null){
-      // console.log("hi");
           getNotes();
     }
     else{
@@ -32,7 +28,6 @@ const Notes = (props) => {
   }, [])
 const [currid, setcurrid] = useState("");
   const updatenote = (currentnote) => {
-    console.log("it is clicked");
     ref.current.click();//where useref is refering that will be clicked
 
 
@@ -45,9 +40,7 @@ const [currid, setcurrid] = useState("");
 
 
   const handleclick = (e) => {
-    console.log("updating the note" ,note)
     e.preventDefault();
-    console.log(currid)
     editnote(currid,note.etitle,note.edescription,note.etag);
     ref2.current.click();//where useref is refering that will be clicked
 
@@ -71,14 +64,6 @@ const [currid, setcurrid] = useState("");
   return (
     <>
       <Addnote  showAlert={props.showAlert}/>
-
-
-
-
-
-
-
-
 
 
       {/* <!-- Button trigger modal -->                          d-none is used hide this element  */}

@@ -35,9 +35,6 @@ app.use("/api/notes",require("./routers/notes"))
 
 
 
-app.get('/api/signup', (req, res) => {
-    res.send('Hello World!')
-  })
 
   app.use(express.static(path.join(_dirname,"frontend/build")));
   app.get("*",(_,res)=>{
