@@ -15,7 +15,7 @@ const NoteState = (props) => {
   //         }, 3000);
   //     }
 
-  const host = "http://localhost:5000";
+  const host = "https://mynote-zmil.onrender.com";
   const startnotes = [];
 
   const [notes, setNote] = useState(startnotes);
