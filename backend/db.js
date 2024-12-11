@@ -1,10 +1,8 @@
 const mongoose=require('mongoose');
 const dotenv = require('dotenv');
 
-// const mongoURI='mongodb://localhost:27017/mynotes';
 dotenv.config();
 
-// const mongoURI ='mongodb+srv://haribalaji17072004:123456hari@cluster0.b21vp.mongodb.net/mynotes'
 const mongoURI = process.env.mongoURI;
 
 // now connecting the db old version
@@ -18,7 +16,6 @@ const mongoURI = process.env.mongoURI;
 
 const connectToMongo = async () => {//here call back function is not allowed instead of that we are going with promise
     try {
-      console.log(mongoURI);
       await mongoose.connect(mongoURI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,

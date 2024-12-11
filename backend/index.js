@@ -10,7 +10,7 @@ var cors = require('cors');
 dotenv.config();
 
 const corsOptions = {
-  origin:'localhost:5000',
+  origin:'https://mynote-zmil.onrender.com',
   credentials:true
 }
 app.use(cors(corsOptions))

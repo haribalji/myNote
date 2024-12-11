@@ -8,8 +8,7 @@ const Signup = (props) => {
     const handlesubmit=async(e)=>{
       e.preventDefault();
       console.log(e.target.email.value)//there the "email" it is the name of the  field
-    //   fetch("http://localhost:5000/api/auth/login")
-      const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
+      const response = await fetch(`https://mynote-zmil.onrender.com/api/auth/createuser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
