@@ -87,7 +87,7 @@ const [currid, setcurrid] = useState("");
                 </div>
                 <div className="form-group">
                   <label htmlFor="description">Description</label>
-                  //<input type="text" className="form-control" id="edescription" value={note.edescription} name="edescription" placeholder="description" onChange={onchange} minLength={5} required  />
+   
                     <textarea className="form-control" id="edescription" name="edescription" value={note.edescription} onChange={onchange} placeholder="description" minLength={5} required></textarea>
 
         
